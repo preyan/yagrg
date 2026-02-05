@@ -1,0 +1,42 @@
+// HSL Color Tokens
+$primary-h: 222;
+$primary-s: 100%;
+$primary-l: 60%;
+
+$secondary-h: 262;
+$secondary-s: 70%;
+$secondary-l: 50%;
+
+$success-h: 142;
+$success-s: 70%;
+$success-l: 45%;
+
+// Design System Variables
+:root {
+    --app-primary: hsl(#{$primary-h}, #{$primary-s}, #{$primary-l});
+    --app-primary-rgb: 37, 99, 235;
+    --app-secondary: hsl(#{$secondary-h}, #{$secondary-s}, #{$secondary-l});
+
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+
+    --card-radius: 1.25rem;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-bs-theme="dark"] {
+    --glass-bg: rgba(15, 23, 42, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+// Typography
+$font-family-sans-serif: 'Inter', system-ui, -apple-system, sans-serif;
+$headings-font-weight: 700;
+$display-font-weight: 800;
+
+// Bootstrap Overrides
+$card-border-radius: var(--card-radius);
+$card-border-width: 0;
+$card-cap-bg: transparent;

@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'styles/variables';
+@import 'bootstrap/scss/bootstrap';
+@import 'styles/mixins';
+
+body {
+    background-color: var(--bs-body-bg);
+    font-family: $font-family-sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.glass-card {
+    @include glass-card;
+}
+
+.text-gradient {
+    @include text-gradient;
+}
+
+.animate-up {
+    @include animate-fade-in-up;
+}
+
+// Global scrollbar refinement
+.custom-scrollbar {
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(var(--app-primary-rgb), 0.1);
+        border-radius: 10px;
+
+        &:hover {
+            background: rgba(var(--app-primary-rgb), 0.3);
+        }
+    }
+}
