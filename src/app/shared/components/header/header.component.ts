@@ -1,18 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ThemeService } from '../../../core/services/theme.service';
 
 /**
- * Top navigation header component.
- * Includes logo and theme toggle.
+ * Application header component containing the brand and theme toggle.
  */
 @Component({
     selector: 'app-header',
-    templateUrl: './header.component.html',
-    styleUrls: ['./header.component.scss'],
     standalone: false,
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-    constructor(private themeService: ThemeService) { }
+    private themeService = inject(ThemeService);
 
     /**
      * Toggles the application theme.
@@ -22,8 +21,7 @@ export class HeaderComponent {
     }
 
     /**
-     * Checks if the dark mode is currently active.
-     * @returns True if dark mode is active.
+     * Checks if dark mode is active.
      */
     isDarkMode(): boolean {
         return this.themeService.isDarkMode();
