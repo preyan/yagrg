@@ -1,37 +1,45 @@
-<div class="container-fluid py-4">
-    <div class="row g-4">
-        <!-- Left Column: Settings & Forms -->
-        <div class="col-lg-6 overflow-auto custom-scrollbar" style="max-height: calc(100vh - 120px)">
-            <div class="mb-4 animate-up">
-                <h2 class="display-6 fw-bold text-gradient mb-2">Project README</h2>
-                <p class="text-muted">Fill in your project details to generate a stunning README.md file.</p>
+<div class="min-h-screen bg-gradient-to-br from-surface-50 to-primary-100 dark:from-navy-950 dark:to-navy-900 py-8">
+    <!-- Decorative blobs -->
+    <div class="decorative-blob blob-1"></div>
+    <div class="decorative-blob blob-2"></div>
+
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Form Side -->
+            <div class="space-y-6">
+                <div class="animate-[slide-up_0.4s_ease-out_forwards]">
+                    <h1 class="text-4xl font-bold text-gradient mb-2">Project README</h1>
+                    <p class="text-navy-600 dark:text-sky-300">Fill in your project details to generate a stunning
+                        README.md file.</p>
+                </div>
+
+                <app-project-info-form class="block animate-[slide-up_0.5s_ease-out_forwards]"></app-project-info-form>
+                <app-features-form class="block animate-[slide-up_0.6s_ease-out_forwards]"></app-features-form>
+                <app-installation-form class="block animate-[slide-up_0.7s_ease-out_forwards]"></app-installation-form>
             </div>
 
-            <app-project-info-form class="d-block mb-4 animate-up"
-                style="animation-delay: 0.1s"></app-project-info-form>
-            <app-features-form class="d-block mb-4 animate-up" style="animation-delay: 0.2s"></app-features-form>
-            <app-installation-form class="d-block mb-4 animate-up"
-                style="animation-delay: 0.3s"></app-installation-form>
-        </div>
-
-        <!-- Right Column: Live Preview -->
-        <div class="col-lg-6">
-            <div class="card border-0 shadow preview-container glass-card h-100 animate-up"
-                style="animation-delay: 0.1s">
-                <div class="card-header bg-transparent border-0 p-4 d-flex justify-content-between align-items-center">
-                    <h5 class="fw-bold mb-0">Live Preview</h5>
-                    <div class="btn-group shadow-sm rounded-pill overflow-hidden">
-                        <button class="btn btn-outline-primary btn-sm px-3" (click)="copyToClipboard()">
-                            <i class="bi bi-copy me-1"></i> Copy
-                        </button>
-                        <button class="btn btn-primary btn-sm px-3" (click)="downloadReadme()">
-                            <i class="bi bi-download me-1"></i> Download
-                        </button>
-                    </div>
-                </div>
-                <div class="card-body p-4 pt-0">
-                    <div class="preview-content rounded-4 p-4 min-vh-50 custom-scrollbar overflow-auto">
-                        <app-markdown-renderer [markdown]="(markdown$ | async) || ''"></app-markdown-renderer>
+            <!-- Preview Side -->
+            <div class="hidden lg:block">
+                <div class="sticky top-24">
+                    <div class="glass-card p-6 animate-[slide-up_0.5s_ease-out_forwards]">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-xl font-bold flex items-center gap-2">
+                                <span class="text-2xl">👁️</span>
+                                <span class="text-gradient">Live Preview</span>
+                            </h2>
+                            <div class="flex gap-2">
+                                <button class="btn-secondary text-sm" (click)="copyToClipboard()">
+                                    📋 Copy
+                                </button>
+                                <button class="btn-primary text-sm" (click)="downloadReadme()">
+                                    ⬇️ Download
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-navy-900 rounded-xl p-6 max-h-[600px] overflow-y-auto custom-scrollbar">
+                            <app-markdown-renderer [markdown]="(markdown$ | async) || ''"></app-markdown-renderer>
+                        </div>
                     </div>
                 </div>
             </div>

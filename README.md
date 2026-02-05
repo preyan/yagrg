@@ -1,59 +1,105 @@
-# Yagrg
+# 📝 YAGRG - Yet Another GitHub README Generator
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.2.
+A modern, beautiful web application for generating stunning GitHub Profile and Project README.md files with live preview.
 
-## Development server
+![Angular](https://img.shields.io/badge/Angular-21-DD0031?style=flat&logo=angular)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?style=flat&logo=tailwind-css)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat&logo=typescript)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat)
 
-To start a local development server, run:
+## ✨ Features
 
-```bash
-ng serve
-```
+- **🎨 Profile README Generator** - Create an eye-catching GitHub profile README with personal info, social links, and tech stack badges
+- **📦 Project README Generator** - Generate professional project documentation with features, installation steps, and usage instructions
+- **👁️ Live Preview** - See your README update in real-time as you type with smooth animations
+- **🌙 Dark/Light Mode** - Beautiful theme switching with glassmorphism effects
+- **📋 Copy & Download** - Easily copy to clipboard or download your generated README.md
+- **🎭 Modern UI** - Stunning Tailwind CSS v4 design with Mana Yerba Mate color palette
+- **⚡ State Management** - Powered by NgRx for predictable state management
+- **📱 Responsive Design** - Works beautifully on any device
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🚀 Tech Stack
 
-## Code scaffolding
+- **Framework:** Angular 21 (NgModules)
+- **Styling:** Tailwind CSS v4
+- **State Management:** NgRx Store
+- **Markdown Parsing:** marked.js
+- **Testing:** Vitest
+- **Package Manager:** pnpm
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🛠️ Getting Started
 
-```bash
-ng generate component component-name
-```
+### Prerequisites
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Node.js v20+
+- pnpm v10+
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Installation
 
 ```bash
-ng test
+# Clone the repository
+git clone https://github.com/preyan/yagrg.git
+
+# Navigate to project directory
+cd yagrg
+
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm start
 ```
 
-## Running end-to-end tests
+Open your browser and navigate to `http://localhost:4200/`
 
-For end-to-end (e2e) testing, run:
+## 📝 Usage
+
+1. **Profile README**: Fill in your personal information, social links, and select your tech stack skills
+2. **Project README**: Add project metadata, key features, and installation instructions
+3. **Preview**: Watch your README render in real-time on the right panel
+4. **Export**: Copy to clipboard or download your README.md file
+
+## 🎨 Color Palette
+
+The app uses the vibrant **Mana Yerba Mate** color scheme:
+
+| Color | Hex | Usage |
+|-------|-----|-------|
+| 🟠 Coral | `#FFD372` | Primary accents |
+| 🔴 Red-Orange | `#F15B42` | CTAs & highlights |
+| 🩷 Pink | `#F49CC4` | Gradients |
+| 🔵 Navy | `#2C3D73` | Text & dark mode |
+| 💙 Sky | `#7CAADC` | Light accents |
+
+## 🧪 Testing
 
 ```bash
-ng e2e
+# Run unit tests
+pnpm test
+
+# Run tests with coverage
+pnpm test --coverage
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 📦 Building
 
-## Additional Resources
+```bash
+# Production build
+pnpm build
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+# Build will be available in dist/yagrg
+```
+
+## 🌐 Deployment
+
+The app is configured for GitHub Pages deployment via GitHub Actions.
+
+**Live Demo:** [https://preyan.github.io/yagrg/](https://preyan.github.io/yagrg/)
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+Made with ❤️ using Angular 21 & Tailwind CSS v4

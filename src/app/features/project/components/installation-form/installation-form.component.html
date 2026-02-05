@@ -1,82 +1,84 @@
-<div class="card border-0 shadow-sm glass-card mt-4">
-    <div class="card-body p-4">
-        <h5 class="card-title fw-bold mb-4 d-flex align-items-center">
-            <i class="bi bi-gear-fill text-primary me-2"></i>
-            Installation & Setup
-        </h5>
+<div class="glass-card p-6">
+    <h3 class="text-lg font-bold mb-6 flex items-center gap-2">
+        <span class="text-xl">⚙️</span>
+        Installation & Setup
+    </h3>
 
-        <form [formGroup]="installationForm" class="row g-4">
-            <!-- Prerequisites -->
-            <div class="col-12">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <p class="small text-muted text-uppercase fw-semibold mb-0">Prerequisites</p>
-                    <button type="button" class="btn btn-outline-primary btn-sm rounded-pill"
-                        (click)="addPrerequisite()">
-                        <i class="bi bi-plus-lg"></i> Add Requirement
+    <form [formGroup]="installationForm" class="space-y-6">
+        <!-- Prerequisites -->
+        <div>
+            <div class="flex justify-between items-center mb-3">
+                <p class="text-sm font-medium text-navy-700 dark:text-sky-300 uppercase tracking-wide">Prerequisites</p>
+                <button type="button" class="btn-secondary text-sm py-2" (click)="addPrerequisite()">
+                    ➕ Add Requirement
+                </button>
+            </div>
+
+            <div formArrayName="prerequisites" class="flex flex-wrap gap-2">
+                @for (prereq of prerequisites.controls; track $index) {
+                <div class="flex animate-[slide-up_0.3s_ease-out]">
+                    <input type="text" [formControlName]="$index" placeholder="e.g. Node.js v18"
+                        class="px-4 py-2 rounded-l-xl bg-white dark:bg-navy-900 border-2 border-r-0 border-primary-200 dark:border-navy-700 focus:border-secondary-400 outline-none transition-all min-w-[150px]">
+                    <button type="button"
+                        class="px-3 bg-secondary-500 text-white rounded-r-xl hover:bg-secondary-600 transition-colors"
+                        (click)="removePrerequisite($index)">
+                        ×
                     </button>
                 </div>
+                } @empty {
+                <div class="text-navy-500 dark:text-sky-400 text-sm italic">No prerequisites added yet.</div>
+                }
+            </div>
+        </div>
 
-                <div formArrayName="prerequisites" class="d-flex flex-wrap gap-2">
-                    @for (prereq of prerequisites.controls; track $index) {
-                    <div class="input-group input-group-sm animate-in" style="width: auto; min-width: 150px;">
-                        <input type="text" [formControlName]="$index" class="form-control custom-input"
-                            placeholder="e.g. Node.js v18" [attr.aria-label]="'Prerequisite ' + ($index + 1)">
-                        <button class="btn btn-outline-danger" type="button" (click)="removePrerequisite($index)"
-                            aria-label="Remove prerequisite">
-                            <i class="bi bi-x-lg"></i>
+        <hr class="border-primary-200 dark:border-navy-700">
+
+        <!-- Steps -->
+        <div>
+            <div class="flex justify-between items-center mb-3">
+                <p class="text-sm font-medium text-navy-700 dark:text-sky-300 uppercase tracking-wide">Installation
+                    Steps</p>
+                <button type="button" class="btn-secondary text-sm py-2" (click)="addStep()">
+                    ➕ Add Step
+                </button>
+            </div>
+
+            <div formArrayName="steps" class="space-y-3">
+                @for (stepGroup of steps.controls; track $index) {
+                <div [formGroupName]="$index"
+                    class="grid grid-cols-1 md:grid-cols-12 gap-3 p-4 rounded-xl bg-primary-50 dark:bg-navy-800 border-2 border-primary-100 dark:border-navy-700 animate-[slide-up_0.3s_ease-out]">
+                    <div class="md:col-span-5">
+                        <p class="text-xs text-navy-600 dark:text-sky-400 mb-1 uppercase font-medium">Step Description
+                        </p>
+                        <input type="text" formControlName="step" placeholder="e.g. Install dependencies"
+                            class="w-full px-4 py-2 rounded-xl bg-white dark:bg-navy-900 border-2 border-primary-200 dark:border-navy-700 focus:border-secondary-400 outline-none transition-all">
+                    </div>
+                    <div class="md:col-span-5">
+                        <p class="text-xs text-navy-600 dark:text-sky-400 mb-1 uppercase font-medium">Command</p>
+                        <div class="flex">
+                            <span
+                                class="inline-flex items-center px-3 rounded-l-xl bg-navy-900 text-primary-300 border-2 border-r-0 border-navy-900">
+                                💻
+                            </span>
+                            <input type="text" formControlName="command" placeholder="pnpm install"
+                                class="flex-1 px-4 py-2 rounded-r-xl bg-navy-800 text-surface-100 border-2 border-navy-700 focus:border-sky-400 outline-none transition-all font-mono text-sm">
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 flex items-end">
+                        <button type="button"
+                            class="w-full py-2 bg-secondary-500 text-white rounded-xl hover:bg-secondary-600 transition-colors"
+                            (click)="removeStep($index)">
+                            🗑️
                         </button>
                     </div>
-                    } @empty {
-                    <div class="text-muted small italic w-100">No prerequisites added yet.</div>
-                    }
                 </div>
+                } @empty {
+                <div
+                    class="text-center py-8 text-navy-500 dark:text-sky-400 border-2 border-dashed border-primary-200 dark:border-navy-700 rounded-xl">
+                    Click "Add Step" to document the installation process.
+                </div>
+                }
             </div>
-
-            <hr class="my-2 opacity-10">
-
-            <!-- Steps -->
-            <div class="col-12">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <p class="small text-muted text-uppercase fw-semibold mb-0">Installation Steps</p>
-                    <button type="button" class="btn btn-outline-primary btn-sm rounded-pill" (click)="addStep()">
-                        <i class="bi bi-plus-lg"></i> Add Step
-                    </button>
-                </div>
-
-                <div formArrayName="steps" class="steps-list">
-                    @for (stepGroup of steps.controls; track $index) {
-                    <div [formGroupName]="$index"
-                        class="row g-2 mb-3 align-items-end animate-in p-3 rounded-3 bg-light border">
-                        <div class="col-md-5">
-                            <p class="x-small text-muted mb-1 fw-semibold text-uppercase">Step Description</p>
-                            <input type="text" formControlName="step" class="form-control form-control-sm custom-input"
-                                placeholder="e.g. Install dependencies"
-                                [attr.aria-label]="'Step description ' + ($index + 1)">
-                        </div>
-                        <div class="col-md-5">
-                            <p class="x-small text-muted mb-1 fw-semibold text-uppercase">Command</p>
-                            <div class="input-group input-group-sm">
-                                <span class="input-group-text bg-dark text-light border-0"><i
-                                        class="bi bi-terminal"></i></span>
-                                <input type="text" formControlName="command"
-                                    class="form-control form-control-sm custom-input bg-dark text-light border-0"
-                                    placeholder="pnpm install" [attr.aria-label]="'Command ' + ($index + 1)">
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <button type="button" class="btn btn-danger btn-sm w-100 py-1" (click)="removeStep($index)"
-                                aria-label="Remove step">
-                                <i class="bi bi-trash"></i>
-                            </button>
-                        </div>
-                    </div>
-                    } @empty {
-                    <div class="text-center py-4 text-muted border border-dashed rounded-3">
-                        Click "Add Step" to document the installation process.
-                    </div>
-                    }
-                </div>
-            </div>
-        </form>
-    </div>
+        </div>
+    </form>
 </div>

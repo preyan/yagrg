@@ -1,35 +1,46 @@
-<div class="container-fluid py-4 h-100 overflow-hidden">
-    <div class="row h-100">
-        <!-- Form Side -->
-        <div class="col-lg-6 h-100 overflow-auto pe-lg-4">
-            <div class="d-flex flex-column gap-4">
-                <app-personal-info-form></app-personal-info-form>
-                <app-social-links-form></app-social-links-form>
-                <app-skills-form></app-skills-form>
-            </div>
-        </div>
+<div class="min-h-screen bg-gradient-to-br from-surface-50 to-primary-100 dark:from-navy-950 dark:to-navy-900 py-8">
+    <!-- Decorative blobs -->
+    <div class="decorative-blob blob-1"></div>
+    <div class="decorative-blob blob-2"></div>
 
-        <!-- Preview Side -->
-        <div class="col-lg-6 h-100 ps-lg-4 border-start d-none d-lg-block">
-            <div class="sticky-top pt-2 animate-up">
-                <div class="card shadow-sm border-0 h-100 glass-card">
-                    <div
-                        class="card-header bg-transparent border-0 pt-4 px-4 d-flex justify-content-between align-items-center">
-                        <h5 class="fw-bold m-0 d-flex align-items-center">
-                            <i class="bi bi-eye-fill text-gradient me-2"></i>
-                            Live Preview
-                        </h5>
-                        <div class="d-flex gap-2">
-                            <button class="btn btn-outline-primary btn-sm" (click)="copyToClipboard()">
-                                <i class="bi bi-copy me-1"></i> Copy
-                            </button>
-                            <button class="btn btn-primary btn-sm" (click)="downloadReadme()">
-                                <i class="bi bi-download me-1"></i> Download
-                            </button>
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Form Side -->
+            <div class="space-y-6">
+                <div class="animate-[slide-up_0.4s_ease-out_forwards]">
+                    <h1 class="text-4xl font-bold text-gradient mb-2">Profile README</h1>
+                    <p class="text-navy-600 dark:text-sky-300">Create an amazing GitHub profile README that stands out.
+                    </p>
+                </div>
+
+                <app-personal-info-form
+                    class="block animate-[slide-up_0.5s_ease-out_forwards]"></app-personal-info-form>
+                <app-social-links-form class="block animate-[slide-up_0.6s_ease-out_forwards]"></app-social-links-form>
+                <app-skills-form class="block animate-[slide-up_0.7s_ease-out_forwards]"></app-skills-form>
+            </div>
+
+            <!-- Preview Side -->
+            <div class="hidden lg:block">
+                <div class="sticky top-24">
+                    <div class="glass-card p-6 animate-[slide-up_0.5s_ease-out_forwards]">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-xl font-bold flex items-center gap-2">
+                                <span class="text-2xl">👁️</span>
+                                <span class="text-gradient">Live Preview</span>
+                            </h2>
+                            <div class="flex gap-2">
+                                <button class="btn-secondary text-sm" (click)="copyToClipboard()">
+                                    📋 Copy
+                                </button>
+                                <button class="btn-primary text-sm" (click)="downloadReadme()">
+                                    ⬇️ Download
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card-body p-4 preview-container custom-scrollbar overflow-auto">
-                        <app-markdown-renderer [markdown]="(markdown$ | async) || ''"></app-markdown-renderer>
+                        <div
+                            class="bg-white dark:bg-navy-900 rounded-xl p-6 max-h-[600px] overflow-y-auto custom-scrollbar">
+                            <app-markdown-renderer [markdown]="(markdown$ | async) || ''"></app-markdown-renderer>
+                        </div>
                     </div>
                 </div>
             </div>

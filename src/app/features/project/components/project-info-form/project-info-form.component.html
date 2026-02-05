@@ -1,33 +1,47 @@
-<div class="card border-0 shadow-sm glass-card">
-    <div class="card-body p-4">
-        <h5 class="card-title fw-bold mb-4 d-flex align-items-center">
-            <i class="bi bi-box-seam-fill text-primary me-2"></i>
-            Project Metadata
-        </h5>
+<div class="glass-card p-6">
+    <h3 class="text-lg font-bold mb-6 flex items-center gap-2">
+        <span class="text-xl">📦</span>
+        Project Metadata
+    </h3>
 
-        <form [formGroup]="projectInfoForm" class="row g-3">
-            <div class="col-md-8">
-                <label for="name" class="form-label small text-muted text-uppercase fw-semibold">Project Name</label>
-                <input type="text" id="name" class="form-control form-control-lg custom-input" formControlName="name"
-                    placeholder="e.g. Awesome Project">
+    <form [formGroup]="projectInfoForm" class="space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="md:col-span-3">
+                <label for="name"
+                    class="block text-sm font-medium text-navy-700 dark:text-sky-300 mb-2 uppercase tracking-wide">
+                    Project Name
+                </label>
+                <input type="text" id="name" formControlName="name" placeholder="e.g. Awesome Project"
+                    class="w-full px-4 py-3 rounded-xl bg-white dark:bg-navy-900 border-2 border-primary-200 dark:border-navy-700 focus:border-secondary-400 focus:ring-2 focus:ring-secondary-400/20 outline-none transition-all">
             </div>
 
-            <div class="col-md-4">
-                <label for="version" class="form-label small text-muted text-uppercase fw-semibold">Version</label>
-                <input type="text" id="version" class="form-control form-control-lg custom-input"
-                    formControlName="version" placeholder="1.0.0">
+            <div>
+                <label for="version"
+                    class="block text-sm font-medium text-navy-700 dark:text-sky-300 mb-2 uppercase tracking-wide">
+                    Version
+                </label>
+                <input type="text" id="version" formControlName="version" placeholder="1.0.0"
+                    class="w-full px-4 py-3 rounded-xl bg-white dark:bg-navy-900 border-2 border-primary-200 dark:border-navy-700 focus:border-secondary-400 focus:ring-2 focus:ring-secondary-400/20 outline-none transition-all">
             </div>
+        </div>
 
-            <div class="col-12">
-                <label for="description" class="form-label small text-muted text-uppercase fw-semibold">Short
-                    Description</label>
-                <textarea id="description" class="form-control custom-input" formControlName="description" rows="2"
-                    placeholder="What does this project do?"></textarea>
-            </div>
+        <div>
+            <label for="description"
+                class="block text-sm font-medium text-navy-700 dark:text-sky-300 mb-2 uppercase tracking-wide">
+                Short Description
+            </label>
+            <textarea id="description" formControlName="description" rows="2" placeholder="What does this project do?"
+                class="w-full px-4 py-3 rounded-xl bg-white dark:bg-navy-900 border-2 border-primary-200 dark:border-navy-700 focus:border-secondary-400 focus:ring-2 focus:ring-secondary-400/20 outline-none transition-all resize-none"></textarea>
+        </div>
 
-            <div class="col-md-6">
-                <label for="license" class="form-label small text-muted text-uppercase fw-semibold">License</label>
-                <select id="license" class="form-select custom-input" formControlName="license">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <label for="license"
+                    class="block text-sm font-medium text-navy-700 dark:text-sky-300 mb-2 uppercase tracking-wide">
+                    License
+                </label>
+                <select id="license" formControlName="license"
+                    class="w-full px-4 py-3 rounded-xl bg-white dark:bg-navy-900 border-2 border-primary-200 dark:border-navy-700 focus:border-secondary-400 focus:ring-2 focus:ring-secondary-400/20 outline-none transition-all">
                     <option value="MIT">MIT</option>
                     <option value="Apache-2.0">Apache 2.0</option>
                     <option value="GPL-3.0">GPL 3.0</option>
@@ -35,11 +49,14 @@
                 </select>
             </div>
 
-            <div class="col-md-6">
-                <label for="author" class="form-label small text-muted text-uppercase fw-semibold">Author</label>
-                <input type="text" id="author" class="form-control custom-input" formControlName="author"
-                    placeholder="e.g. John Doe">
+            <div>
+                <label for="author"
+                    class="block text-sm font-medium text-navy-700 dark:text-sky-300 mb-2 uppercase tracking-wide">
+                    Author
+                </label>
+                <input type="text" id="author" formControlName="author" placeholder="e.g. John Doe"
+                    class="w-full px-4 py-3 rounded-xl bg-white dark:bg-navy-900 border-2 border-primary-200 dark:border-navy-700 focus:border-secondary-400 focus:ring-2 focus:ring-secondary-400/20 outline-none transition-all">
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
 </div>

@@ -1,21 +1,38 @@
-<header class="navbar sticky-top bg-body-tertiary shadow-sm px-4 py-3">
-    <div class="container-fluid d-flex justify-content-between align-items-center">
-        <div class="d-flex align-items-center gap-5">
-            <a class="navbar-brand fw-bold fs-3 d-flex align-items-center" routerLink="/">
-                <span class="text-gradient">YA</span>GRG
+<header
+    class="sticky top-0 z-50 backdrop-blur-lg bg-surface-50/80 dark:bg-navy-950/80 border-b border-primary-200 dark:border-navy-800 px-6 py-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center gap-8">
+            <a class="flex items-center gap-3 hover:opacity-80 transition-opacity cursor-pointer" routerLink="/">
+                <!-- Logo -->
+                <img src="logo.svg" alt="YAGRG Logo" class="w-10 h-10">
+                <!-- Brand Name -->
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold">
+                        <span class="text-gradient">YA</span><span
+                            class="text-navy-800 dark:text-surface-100">GRG</span>
+                    </span>
+                    <span class="text-xs text-navy-500 dark:text-sky-400 -mt-1 hidden sm:block">Yet Another GitHub
+                        README Generator</span>
+                </div>
             </a>
 
-            <nav class="d-none d-md-flex align-items-center gap-4">
-                <a routerLink="/profile" routerLinkActive="active" class="nav-link-custom">Profile README</a>
-                <a routerLink="/project" routerLinkActive="active" class="nav-link-custom">Project README</a>
+            <nav class="hidden md:flex items-center gap-6">
+                <a routerLink="/profile" routerLinkActive="text-secondary-500"
+                    class="text-navy-600 dark:text-sky-300 hover:text-secondary-500 transition-colors font-medium">
+                    Profile README
+                </a>
+                <a routerLink="/project" routerLinkActive="text-secondary-500"
+                    class="text-navy-600 dark:text-sky-300 hover:text-secondary-500 transition-colors font-medium">
+                    Project README
+                </a>
             </nav>
         </div>
 
-        <div class="d-flex align-items-center gap-3">
+        <div class="flex items-center gap-4">
             <button type="button"
-                class="btn theme-toggle glass-card rounded-circle border-0 p-2 d-flex align-items-center justify-content-center"
+                class="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:scale-110 transition-transform"
                 (click)="toggleTheme()" [title]="'Toggle Theme'">
-                <i class="bi fs-5" [class.bi-moon-stars-fill]="!isDarkMode()" [class.bi-sun-fill]="isDarkMode()"></i>
+                <span class="text-lg">{{ isDarkMode() ? '☀️' : '🌙' }}</span>
             </button>
         </div>
     </div>

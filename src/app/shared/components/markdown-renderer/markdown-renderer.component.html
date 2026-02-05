@@ -1,1 +1,9 @@
-<div class="markdown-body" [innerHTML]="renderedHtml$ | async"></div>
+<div class="markdown-body relative">
+    @if (isTyping()) {
+    <div class="absolute top-0 right-0 flex items-center gap-2 text-secondary-500 text-sm animate-pulse">
+        <span class="inline-block w-2 h-2 bg-secondary-500 rounded-full animate-ping"></span>
+        Typing...
+    </div>
+    }
+    <div [innerHTML]="renderedHtml$ | async" class="animate-[fade-in_0.3s_ease-out]"></div>
+</div>

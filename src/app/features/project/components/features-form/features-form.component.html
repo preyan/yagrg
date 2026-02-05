@@ -1,48 +1,55 @@
-<div class="card border-0 shadow-sm glass-card mt-4">
-    <div class="card-body p-4">
-        <h5 class="card-title fw-bold mb-4 d-flex align-items-center">
-            <i class="bi bi-stars text-primary me-2"></i>
-            Key Features
-        </h5>
+<div class="glass-card p-6">
+    <h3 class="text-lg font-bold mb-6 flex items-center gap-2">
+        <span class="text-xl">✨</span>
+        Key Features
+    </h3>
 
-        <form [formGroup]="featureForm" (ngSubmit)="addFeature()" class="row g-3 mb-4">
-            <div class="col-md-4">
-                <label for="feat-title" class="form-label small text-muted text-uppercase fw-semibold">Feature
-                    Title</label>
-                <input type="text" id="feat-title" class="form-control custom-input" formControlName="title"
-                    placeholder="e.g. Real-time Sync">
+    <form [formGroup]="featureForm" (ngSubmit)="addFeature()" class="mb-6">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-end">
+            <div class="md:col-span-4">
+                <label for="feat-title"
+                    class="block text-sm font-medium text-navy-700 dark:text-sky-300 mb-2 uppercase tracking-wide">
+                    Feature Title
+                </label>
+                <input type="text" id="feat-title" formControlName="title" placeholder="e.g. Real-time Sync"
+                    class="w-full px-4 py-3 rounded-xl bg-white dark:bg-navy-900 border-2 border-primary-200 dark:border-navy-700 focus:border-secondary-400 outline-none transition-all">
             </div>
-            <div class="col-md-6">
+            <div class="md:col-span-6">
                 <label for="feat-desc"
-                    class="form-label small text-muted text-uppercase fw-semibold">Description</label>
-                <input type="text" id="feat-desc" class="form-control custom-input" formControlName="description"
-                    placeholder="Briefly describe the feature">
+                    class="block text-sm font-medium text-navy-700 dark:text-sky-300 mb-2 uppercase tracking-wide">
+                    Description
+                </label>
+                <input type="text" id="feat-desc" formControlName="description"
+                    placeholder="Briefly describe the feature"
+                    class="w-full px-4 py-3 rounded-xl bg-white dark:bg-navy-900 border-2 border-primary-200 dark:border-navy-700 focus:border-secondary-400 outline-none transition-all">
             </div>
-            <div class="col-md-2 d-flex align-items-end">
-                <button type="submit" class="btn btn-primary w-100 py-2 rounded-3" [disabled]="featureForm.invalid">
-                    <i class="bi bi-plus-lg"></i> Add
+            <div class="md:col-span-2">
+                <button type="submit" class="w-full btn-primary" [disabled]="featureForm.invalid">
+                    ➕ Add
                 </button>
             </div>
-        </form>
-
-        <div class="features-list">
-            @for (feature of features$ | async; track $index) {
-            <div
-                class="feature-item d-flex justify-content-between align-items-start p-3 mb-2 rounded-3 bg-light border transition-all animate-in">
-                <div>
-                    <h6 class="fw-bold mb-1 text-dark">{{ feature.title }}</h6>
-                    <p class="small text-muted mb-0">{{ feature.description }}</p>
-                </div>
-                <button type="button" class="btn btn-outline-danger btn-sm border-0 rounded-circle"
-                    (click)="removeFeature($index)" aria-label="Remove feature">
-                    <i class="bi bi-trash"></i>
-                </button>
-            </div>
-            } @empty {
-            <div class="text-center py-4 text-muted border border-dashed rounded-3">
-                <i class="bi bi-info-circle me-1"></i> No features added yet.
-            </div>
-            }
         </div>
+    </form>
+
+    <div class="space-y-3">
+        @for (feature of features$ | async; track $index) {
+        <div
+            class="flex justify-between items-start p-4 rounded-xl bg-primary-50 dark:bg-navy-800 border-2 border-primary-100 dark:border-navy-700 animate-[slide-up_0.3s_ease-out]">
+            <div>
+                <h4 class="font-bold text-navy-800 dark:text-surface-100 mb-1">{{ feature.title }}</h4>
+                <p class="text-sm text-navy-600 dark:text-sky-300">{{ feature.description }}</p>
+            </div>
+            <button type="button"
+                class="text-secondary-500 hover:text-secondary-600 hover:bg-secondary-100 dark:hover:bg-secondary-900/30 p-2 rounded-lg transition-colors"
+                (click)="removeFeature($index)">
+                🗑️
+            </button>
+        </div>
+        } @empty {
+        <div
+            class="text-center py-8 text-navy-500 dark:text-sky-400 border-2 border-dashed border-primary-200 dark:border-navy-700 rounded-xl">
+            ℹ️ No features added yet.
+        </div>
+        }
     </div>
 </div>

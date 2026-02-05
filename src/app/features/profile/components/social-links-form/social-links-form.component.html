@@ -1,48 +1,70 @@
-<div class="card border-0 shadow-sm glass-card mt-4">
-    <div class="card-body p-4">
-        <h5 class="card-title fw-bold mb-4 d-flex align-items-center">
-            <i class="bi bi-share-fill text-primary me-2"></i>
-            Social Links
-        </h5>
+<div class="glass-card p-6">
+    <h3 class="text-lg font-bold mb-6 flex items-center gap-2">
+        <span class="text-xl">🔗</span>
+        Social Links
+    </h3>
 
-        <form [formGroup]="socialLinksForm" class="row g-3">
-            <div class="col-md-6">
-                <label for="github" class="form-label small text-muted text-uppercase fw-semibold">GitHub
-                    Username</label>
-                <div class="input-group">
-                    <span class="input-group-text bg-light border-end-0"><i class="bi bi-github"></i></span>
-                    <input type="text" id="github" class="form-control custom-input border-start-0"
-                        formControlName="github" placeholder="username">
+    <form [formGroup]="socialLinksForm" class="space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <label for="github"
+                    class="block text-sm font-medium text-navy-700 dark:text-sky-300 mb-2 uppercase tracking-wide">
+                    GitHub Username
+                </label>
+                <div class="flex">
+                    <span
+                        class="inline-flex items-center px-3 rounded-l-xl border-2 border-r-0 border-primary-200 bg-primary-50 dark:bg-navy-800 dark:border-navy-700 text-lg">
+                        🐙
+                    </span>
+                    <input type="text" id="github" formControlName="github" placeholder="username"
+                        class="flex-1 px-4 py-3 rounded-r-xl border-2 border-primary-200 dark:border-navy-700 bg-white dark:bg-navy-900 focus:border-secondary-400 focus:ring-2 focus:ring-secondary-400/20 outline-none transition-all">
                 </div>
             </div>
 
-            <div class="col-md-6">
-                <label for="twitter" class="form-label small text-muted text-uppercase fw-semibold">Twitter / X</label>
-                <div class="input-group">
-                    <span class="input-group-text bg-light border-end-0"><i class="bi bi-twitter-x"></i></span>
-                    <input type="text" id="twitter" class="form-control custom-input border-start-0"
-                        formControlName="twitter" placeholder="username">
+            <div>
+                <label for="twitter"
+                    class="block text-sm font-medium text-navy-700 dark:text-sky-300 mb-2 uppercase tracking-wide">
+                    Twitter / X
+                </label>
+                <div class="flex">
+                    <span
+                        class="inline-flex items-center px-3 rounded-l-xl border-2 border-r-0 border-primary-200 bg-primary-50 dark:bg-navy-800 dark:border-navy-700 text-lg">
+                        🐦
+                    </span>
+                    <input type="text" id="twitter" formControlName="twitter" placeholder="username"
+                        class="flex-1 px-4 py-3 rounded-r-xl border-2 border-primary-200 dark:border-navy-700 bg-white dark:bg-navy-900 focus:border-secondary-400 focus:ring-2 focus:ring-secondary-400/20 outline-none transition-all">
                 </div>
             </div>
 
-            <div class="col-md-6">
-                <label for="linkedin" class="form-label small text-muted text-uppercase fw-semibold">LinkedIn</label>
-                <div class="input-group">
-                    <span class="input-group-text bg-light border-end-0"><i class="bi bi-linkedin"></i></span>
-                    <input type="text" id="linkedin" class="form-control custom-input border-start-0"
-                        formControlName="linkedin" placeholder="username">
+            <div>
+                <label for="linkedin"
+                    class="block text-sm font-medium text-navy-700 dark:text-sky-300 mb-2 uppercase tracking-wide">
+                    LinkedIn
+                </label>
+                <div class="flex">
+                    <span
+                        class="inline-flex items-center px-3 rounded-l-xl border-2 border-r-0 border-primary-200 bg-primary-50 dark:bg-navy-800 dark:border-navy-700 text-lg">
+                        💼
+                    </span>
+                    <input type="text" id="linkedin" formControlName="linkedin" placeholder="username"
+                        class="flex-1 px-4 py-3 rounded-r-xl border-2 border-primary-200 dark:border-navy-700 bg-white dark:bg-navy-900 focus:border-secondary-400 focus:ring-2 focus:ring-secondary-400/20 outline-none transition-all">
                 </div>
             </div>
 
-            <div class="col-md-6">
-                <label for="website" class="form-label small text-muted text-uppercase fw-semibold">Portfolio /
-                    Website</label>
-                <div class="input-group">
-                    <span class="input-group-text bg-light border-end-0"><i class="bi bi-globe"></i></span>
-                    <input type="url" id="website" class="form-control custom-input border-start-0"
-                        formControlName="website" placeholder="https://...">
+            <div>
+                <label for="website"
+                    class="block text-sm font-medium text-navy-700 dark:text-sky-300 mb-2 uppercase tracking-wide">
+                    Portfolio / Website
+                </label>
+                <div class="flex">
+                    <span
+                        class="inline-flex items-center px-3 rounded-l-xl border-2 border-r-0 border-primary-200 bg-primary-50 dark:bg-navy-800 dark:border-navy-700 text-lg">
+                        🌐
+                    </span>
+                    <input type="url" id="website" formControlName="website" placeholder="https://..."
+                        class="flex-1 px-4 py-3 rounded-r-xl border-2 border-primary-200 dark:border-navy-700 bg-white dark:bg-navy-900 focus:border-secondary-400 focus:ring-2 focus:ring-secondary-400/20 outline-none transition-all">
                 </div>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
 </div>
