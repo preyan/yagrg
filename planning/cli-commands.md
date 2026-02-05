@@ -27,4 +27,13 @@ This document tracks the CLI commands used during the development of YAGRG, alon
 | `pnpm exec husky init`            | Initializes Husky git hooks.      |
 | `echo ... > commitlint.config.js` | Creates Commitlint configuration. |
 | `echo ... > .prettierrc`          | Creates Prettier configuration.   |
-| `echo ... > .stylelintrc.json`    | Creates Stylelint configuration.  |
+| `echo ... > .stylelintrc.json`    | Creates Stylelint configuration.                                    |
+| `npx ng g m shared --routing=false` | Generates the SharedModule for reusable units.                      |
+| `npx ng add @angular-eslint/schematics --skip-confirmation` | Configures ESLint with official Angular defaults (Flat config). |
+
+## Versioning & Changelog
+
+| Command | Purpose |
+| :--- | :--- |
+| `pnpm run release -- --first-release` | Initial release with changelog generation. |
+| `pnpm run release` | Subsequent releases (auto-bumps version based on commits). |

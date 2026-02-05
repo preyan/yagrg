@@ -1,0 +1,15 @@
+<header class="navbar sticky-top bg-body-tertiary shadow-sm px-4 py-3">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <a class="navbar-brand fw-bold fs-4 d-flex align-items-center" routerLink="/">
+            <span class="text-primary me-2">YA</span>GRG
+        </a>
+
+        <div class="d-flex align-items-center gap-3">
+            <button type="button"
+                class="btn btn-outline-secondary theme-toggle rounded-circle border-0 p-2 d-flex align-items-center justify-content-center"
+                (click)="toggleTheme()" [title]="'Toggle Theme'">
+                <i class="bi" [class.bi-moon-fill]="!isDarkMode()" [class.bi-sun-fill]="isDarkMode()"></i>
+            </button>
+        </div>
+    </div>
+</header>
