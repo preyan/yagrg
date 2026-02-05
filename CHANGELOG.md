@@ -2,12 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.0.1](///compare/v0.0.0...v0.0.1) (2026-02-05)
-
+### [0.0.2](///compare/v0.0.1...v0.0.2) (2026-02-05)
 
 ### Features
 
-* **shared:** implement HeaderComponent with theme toggle and register in SharedModule 67b28a8
+- **preview:** implement live preview foundation with composer and renderer caabc6b
+- **preview:** integrate live preview into profile and project containers 460c20f
+
+### [0.0.1](///compare/v0.0.0...v0.0.1) (2026-02-05)
+
+### Features
+
+- **shared:** implement HeaderComponent with theme toggle and register in SharedModule 67b28a8
 
 ## 0.0.0 (2026-02-05)
 
