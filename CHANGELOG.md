@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](///compare/v0.0.3...v0.0.4) (2026-02-05)
+
+### Features
+
+- **ui:** modernize UI with Tailwind CSS v4 and Mana Yerba Mate color scheme
+- **ui:** replace ng-bootstrap/Bootstrap with Tailwind CSS v4
+- **ui:** add glassmorphism effects and decorative animated blobs
+- **ui:** create SVG logo for YAGRG
+- **ui:** update header with logo and full name "Yet Another GitHub README Generator"
+- **preview:** add typing animation indicator to live preview
+- **docs:** update README with comprehensive project features and color palette
+
+### BREAKING CHANGES
+
+- **deps:** removed ng-bootstrap and Bootstrap dependencies
+- **styling:** all Bootstrap classes have been replaced with Tailwind CSS utilities
+
 ### [0.0.3](///compare/v0.0.2...v0.0.3) (2026-02-05)
 
 ### Features
