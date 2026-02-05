@@ -34,7 +34,7 @@ export class FeaturesFormComponent {
     }
   }
 
-  removeFeature(title: string): void {
-    this.store.dispatch(ProjectActions.removeFeature({ featureTitle: title }));
+  removeFeature(index: number): void {
+    this.store.dispatch(ProjectActions.removeFeature({ index }));
   }
 }

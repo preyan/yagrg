@@ -1,4 +1,4 @@
-import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { NgModule, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 /**
@@ -6,18 +6,13 @@ import { CommonModule } from '@angular/common';
  * This module should only be imported once in the AppModule.
  */
 @NgModule({
-    declarations: [],
     imports: [CommonModule],
-    providers: [],
 })
 export class CoreModule {
-    /**
-     * Prevents re-importing the CoreModule.
-     * @param parentModule - The parent module (should be undefined if imported correctly).
-     */
-    constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
+    constructor() {
+        const parentModule = inject(CoreModule, { optional: true, skipSelf: true });
         if (parentModule) {
-            throw new Error('CoreModule is already loaded. Import it only in AppModule.');
+            throw new Error('CoreModule is already loaded. Import it in the AppModule only');
         }
     }
 }

@@ -5,6 +5,21 @@ describe('ThemeService', () => {
     let service: ThemeService;
 
     beforeEach(() => {
+        // Mock matchMedia
+        Object.defineProperty(window, 'matchMedia', {
+            writable: true,
+            value: vi.fn().mockImplementation(query => ({
+                matches: false,
+                media: query,
+                onchange: null,
+                addListener: vi.fn(), // Deprecated
+                removeListener: vi.fn(), // Deprecated
+                addEventListener: vi.fn(),
+                removeEventListener: vi.fn(),
+                dispatchEvent: vi.fn(),
+            })),
+        });
+
         // Clear localStorage before each test
         localStorage.clear();
         TestBed.configureTestingModule({
@@ -40,32 +55,41 @@ describe('ThemeService', () => {
     });
 
     describe('toggleTheme', () => {
-        it('should switch from light to dark', () => {
+        it('should switch from light to dark', async () => {
             service.toggleTheme();
+            // Effects are usually sync in Vitest environment if possible, 
+            // but let's wait a bit to be sure
+            await new Promise(resolve => setTimeout(resolve, 0));
             expect(service.currentTheme()).toBe('dark');
         });
 
-        it('should switch from dark to light', () => {
+        it('should switch from dark to light', async () => {
             service.setTheme('dark');
+            await new Promise(resolve => setTimeout(resolve, 0));
             service.toggleTheme();
+            await new Promise(resolve => setTimeout(resolve, 0));
             expect(service.currentTheme()).toBe('light');
         });
     });
 
     describe('setTheme', () => {
-        it('should set the theme to dark', () => {
+        it('should set the theme to dark', async () => {
             service.setTheme('dark');
+            await new Promise(resolve => setTimeout(resolve, 0));
             expect(service.currentTheme()).toBe('dark');
         });
 
-        it('should set the theme to light', () => {
+        it('should set the theme to light', async () => {
             service.setTheme('dark'); // First set to dark
+            await new Promise(resolve => setTimeout(resolve, 0));
             service.setTheme('light'); // Then set to light
+            await new Promise(resolve => setTimeout(resolve, 0));
             expect(service.currentTheme()).toBe('light');
         });
 
-        it('should persist theme to localStorage', () => {
+        it('should persist theme to localStorage', async () => {
             service.setTheme('dark');
+            await new Promise(resolve => setTimeout(resolve, 0));
             expect(localStorage.getItem('yagrg-theme')).toBe('dark');
         });
     });

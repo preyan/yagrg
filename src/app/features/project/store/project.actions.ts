@@ -6,8 +6,10 @@ export const ProjectActions = createActionGroup({
     source: 'Project Generator',
     events: {
         'Update Project Info': props<{ projectInfo: ProjectInfo }>(),
+        'Update Features': props<{ features: ProjectFeature[] }>(),
         'Add Feature': props<{ feature: ProjectFeature }>(),
-        'Remove Feature': props<{ featureTitle: string }>(),
+        'Remove Feature': props<{ index: number }>(),
+        'Update Tech Stack': props<{ stack: TechBadge[] }>(),
         'Add Tech Badge': props<{ badge: TechBadge }>(),
         'Remove Tech Badge': props<{ badgeName: string }>(),
         'Update Installation': props<{ prerequisites: string[], steps: InstallationStep[] }>(),

@@ -26,7 +26,7 @@
         </form>
 
         <div class="features-list">
-            @for (feature of features$ | async; track feature.title) {
+            @for (feature of features$ | async; track $index) {
             <div
                 class="feature-item d-flex justify-content-between align-items-start p-3 mb-2 rounded-3 bg-light border transition-all animate-in">
                 <div>
@@ -34,7 +34,7 @@
                     <p class="small text-muted mb-0">{{ feature.description }}</p>
                 </div>
                 <button type="button" class="btn btn-outline-danger btn-sm border-0 rounded-circle"
-                    (click)="removeFeature(feature.title)" aria-label="Remove feature">
+                    (click)="removeFeature($index)" aria-label="Remove feature">
                     <i class="bi bi-trash"></i>
                 </button>
             </div>

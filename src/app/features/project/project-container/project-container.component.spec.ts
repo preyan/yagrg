@@ -3,7 +3,9 @@ import { ProjectContainerComponent } from './project-container.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { provideMockStore } from '@ngrx/store/testing';
 import { MarkdownComposerService } from '../../../core/services/markdown-composer';
+import { DownloadService } from '../../../core/services/download.service';
 import { initialProjectState } from '../store/project.state';
+
 
 describe('ProjectContainerComponent', () => {
   let component: ProjectContainerComponent;
@@ -28,4 +30,19 @@ describe('ProjectContainerComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should call copyToClipboard on downloadService when copyToClipboard is called', () => {
+    const downloadService = TestBed.inject(DownloadService);
+    const spy = vi.spyOn(downloadService, 'copyToClipboard');
+    component.copyToClipboard();
+    expect(spy).toHaveBeenCalled();
+  });
+
+  it('should call downloadFile on downloadService when downloadReadme is called', () => {
+    const downloadService = TestBed.inject(DownloadService);
+    const spy = vi.spyOn(downloadService, 'downloadFile');
+    component.downloadReadme();
+    expect(spy).toHaveBeenCalled();
+  });
 });
+

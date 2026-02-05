@@ -1,6 +1,8 @@
 import { Component, Input, OnChanges, SimpleChanges, ViewEncapsulation, inject } from '@angular/core';
 import { marked } from 'marked';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { BehaviorSubject, Observable, from } from 'rxjs';
+import { switchMap, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-markdown-renderer',
@@ -11,18 +13,19 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 })
 export class MarkdownRendererComponent implements OnChanges {
   @Input() markdown = '';
-  renderedHtml: SafeHtml = '';
 
+  private markdown$ = new BehaviorSubject<string>('');
   private sanitizer = inject(DomSanitizer);
+
+  public renderedHtml$: Observable<SafeHtml> = this.markdown$.pipe(
+    switchMap(md => from(marked.parse(md))),
+    map(html => this.sanitizer.bypassSecurityTrustHtml(html))
+  );
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['markdown']) {
-      this.render();
+      this.markdown$.next(this.markdown);
     }
   }
-
-  private async render(): Promise<void> {
-    const rawHtml = await marked.parse(this.markdown);
-    this.renderedHtml = this.sanitizer.bypassSecurityTrustHtml(rawHtml);
-  }
 }
+

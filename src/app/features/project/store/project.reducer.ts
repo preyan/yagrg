@@ -10,14 +10,24 @@ export const projectReducer = createReducer(
         projectInfo,
     })),
 
+    on(ProjectActions.updateFeatures, (state, { features }): ProjectState => ({
+        ...state,
+        features,
+    })),
+
     on(ProjectActions.addFeature, (state, { feature }): ProjectState => ({
         ...state,
         features: [...state.features, feature],
     })),
 
-    on(ProjectActions.removeFeature, (state, { featureTitle }): ProjectState => ({
+    on(ProjectActions.removeFeature, (state, { index }): ProjectState => ({
         ...state,
-        features: state.features.filter(f => f.title !== featureTitle),
+        features: state.features.filter((_, i) => i !== index),
+    })),
+
+    on(ProjectActions.updateTechStack, (state, { stack }): ProjectState => ({
+        ...state,
+        techStack: stack,
     })),
 
     on(ProjectActions.addTechBadge, (state, { badge }): ProjectState => ({
