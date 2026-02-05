@@ -1,12 +1,12 @@
 # Task List: YAGRG (Yet Another GitHub README Generator)
 
-- [ ] Project Setup <!-- id: 0 -->
-  - [ ] Initialize Angular workspace (YAGRG) with `pnpm` and `NgModules` <!-- id: 1 -->
-  - [/] Configure `pnpm` (Selected for stability over Bun) <!-- id: 2 -->
-  - [/] Install dependencies (NgRx, ng-bootstrap, bootstrap) <!-- id: 3 -->
-  - [/] Set up ESLint and Prettier <!-- id: 4 -->
-  - [/] Configure Tooling (Husky, Commitlint, Stylelint, Compodoc, TSDoc, SemVer) <!-- id: 4a -->
-  - [ ] Create folder structure (core, shared, features) <!-- id: 5 -->
+- [x] Project Setup <!-- id: 0 -->
+  - [x] Initialize Angular workspace (YAGRG) with `pnpm` and `NgModules` <!-- id: 1 -->
+  - [x] Configure `pnpm` (Selected for stability over Bun) <!-- id: 2 -->
+  - [x] Install dependencies (NgRx, ng-bootstrap, bootstrap) <!-- id: 3 -->
+  - [x] Set up ESLint and Prettier <!-- id: 4 -->
+  - [x] Configure Tooling (Husky, Commitlint, Stylelint, Compodoc, TSDoc, SemVer) <!-- id: 4a -->
+  - [x] Create folder structure (core, shared, features) <!-- id: 5 -->
 - [ ] Core Architecture & State Management <!-- id: 6 -->
   - [ ] Setup NgRx Store (Root state, meta-reducers) <!-- id: 7 -->
   - [ ] Implement Theme Service (Light/Dark mode) <!-- id: 8 -->
