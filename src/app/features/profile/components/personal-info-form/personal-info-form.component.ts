@@ -41,9 +41,8 @@ export class PersonalInfoFormComponent {
       distinctUntilChanged((prev, curr) => JSON.stringify(prev) === JSON.stringify(curr)),
       takeUntilDestroyed()
     ).subscribe(value => {
-      if (this.personalInfoForm.valid) {
-        this.store.dispatch(updatePersonalInfo({ personalInfo: value }));
-      }
+      // Always dispatch to store for live preview (removed validation requirement)
+      this.store.dispatch(updatePersonalInfo({ personalInfo: value }));
     });
   }
 }
