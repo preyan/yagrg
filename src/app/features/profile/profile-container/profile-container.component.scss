@@ -1,0 +1,12 @@
+.preview-container {
+    min-height: 400px;
+    background-color: var(--bs-body-bg);
+    border-radius: 0.5rem;
+}
+
+.glass-card {
+    background: rgba(var(--bs-body-bg-rgb), 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(var(--bs-border-color-rgb), 0.3);
+}

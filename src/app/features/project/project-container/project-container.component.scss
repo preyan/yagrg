@@ -1,0 +1,46 @@
+.text-gradient {
+    background: linear-gradient(135deg, var(--bs-primary) 0%, #6f42c1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.preview-container {
+    min-height: 600px;
+    border: 1px solid rgba(var(--bs-primary-rgb), 0.1) !important;
+}
+
+.preview-content {
+    background: var(--bs-body-bg);
+    border: 1px solid var(--bs-border-color-translucent);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--bs-primary-border-subtle) transparent;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--bs-primary-border-subtle);
+        border-radius: 10px;
+    }
+}
+
+.animate-in {
+    animation: slideUp 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

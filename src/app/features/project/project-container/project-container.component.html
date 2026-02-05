@@ -1,0 +1,37 @@
+<div class="container-fluid py-4">
+    <div class="row g-4">
+        <!-- Left Column: Settings & Forms -->
+        <div class="col-lg-6 overflow-auto custom-scrollbar" style="max-height: calc(100vh - 120px)">
+            <div class="mb-4">
+                <h2 class="display-6 fw-bold text-gradient mb-2">Project README</h2>
+                <p class="text-muted">Fill in your project details to generate a stunning README.md file.</p>
+            </div>
+
+            <app-project-info-form></app-project-info-form>
+            <app-features-form></app-features-form>
+            <app-installation-form></app-installation-form>
+        </div>
+
+        <!-- Right Column: Live Preview -->
+        <div class="col-lg-6">
+            <div class="card border-0 shadow preview-container glass-card h-100">
+                <div class="card-header bg-transparent border-0 p-4 d-flex justify-content-between align-items-center">
+                    <h5 class="fw-bold mb-0">Live Preview</h5>
+                    <div class="btn-group shadow-sm rounded-pill overflow-hidden">
+                        <button class="btn btn-outline-primary btn-sm px-3">
+                            <i class="bi bi-copy me-1"></i> Copy
+                        </button>
+                        <button class="btn btn-primary btn-sm px-3">
+                            <i class="bi bi-download me-1"></i> Download
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body p-4 pt-0">
+                    <div class="preview-content rounded-4 p-4 min-vh-50 custom-scrollbar overflow-auto">
+                        <app-markdown-renderer [markdown]="(markdown$ | async) || ''"></app-markdown-renderer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

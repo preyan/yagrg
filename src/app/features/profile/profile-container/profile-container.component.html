@@ -1,0 +1,29 @@
+<div class="container-fluid py-4 h-100 overflow-hidden">
+    <div class="row h-100">
+        <!-- Form Side -->
+        <div class="col-lg-6 h-100 overflow-auto pe-lg-4">
+            <div class="d-flex flex-column gap-4">
+                <app-personal-info-form></app-personal-info-form>
+                <app-social-links-form></app-social-links-form>
+                <app-skills-form></app-skills-form>
+            </div>
+        </div>
+
+        <!-- Preview Side -->
+        <div class="col-lg-6 h-100 ps-lg-4 border-start d-none d-lg-block">
+            <div class="sticky-top pt-2">
+                <div class="card shadow-sm border-0 h-100 glass-card">
+                    <div class="card-header bg-transparent border-0 pt-4 px-4">
+                        <h5 class="fw-bold m-0 d-flex align-items-center">
+                            <i class="bi bi-eye-fill text-primary me-2"></i>
+                            Live Preview
+                        </h5>
+                    </div>
+                    <div class="card-body p-4 preview-container custom-scrollbar overflow-auto">
+                        <app-markdown-renderer [markdown]="(markdown$ | async) || ''"></app-markdown-renderer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
