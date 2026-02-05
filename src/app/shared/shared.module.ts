@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { HeaderComponent } from './components/header/header.component';
+import { MarkdownRendererComponent } from './components/markdown-renderer/markdown-renderer.component';
 
 /**
  * SharedModule contains reusable components, pipes, and directives.
@@ -12,7 +13,8 @@ import { HeaderComponent } from './components/header/header.component';
  */
 @NgModule({
     declarations: [
-        HeaderComponent
+        HeaderComponent,
+        MarkdownRendererComponent
     ],
     imports: [
         CommonModule,
@@ -25,7 +27,8 @@ import { HeaderComponent } from './components/header/header.component';
         FormsModule,
         ReactiveFormsModule,
         NgbModule,
-        HeaderComponent
+        HeaderComponent,
+        MarkdownRendererComponent
     ]
 })
 export class SharedModule { }
