@@ -1,0 +1,45 @@
+<div class="card border-0 shadow-sm glass-card">
+    <div class="card-body p-4">
+        <h5 class="card-title fw-bold mb-4 d-flex align-items-center">
+            <i class="bi bi-box-seam-fill text-primary me-2"></i>
+            Project Metadata
+        </h5>
+
+        <form [formGroup]="projectInfoForm" class="row g-3">
+            <div class="col-md-8">
+                <label for="name" class="form-label small text-muted text-uppercase fw-semibold">Project Name</label>
+                <input type="text" id="name" class="form-control form-control-lg custom-input" formControlName="name"
+                    placeholder="e.g. Awesome Project">
+            </div>
+
+            <div class="col-md-4">
+                <label for="version" class="form-label small text-muted text-uppercase fw-semibold">Version</label>
+                <input type="text" id="version" class="form-control form-control-lg custom-input"
+                    formControlName="version" placeholder="1.0.0">
+            </div>
+
+            <div class="col-12">
+                <label for="description" class="form-label small text-muted text-uppercase fw-semibold">Short
+                    Description</label>
+                <textarea id="description" class="form-control custom-input" formControlName="description" rows="2"
+                    placeholder="What does this project do?"></textarea>
+            </div>
+
+            <div class="col-md-6">
+                <label for="license" class="form-label small text-muted text-uppercase fw-semibold">License</label>
+                <select id="license" class="form-select custom-input" formControlName="license">
+                    <option value="MIT">MIT</option>
+                    <option value="Apache-2.0">Apache 2.0</option>
+                    <option value="GPL-3.0">GPL 3.0</option>
+                    <option value="Unlicense">Unlicense</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label for="author" class="form-label small text-muted text-uppercase fw-semibold">Author</label>
+                <input type="text" id="author" class="form-control custom-input" formControlName="author"
+                    placeholder="e.g. John Doe">
+            </div>
+        </form>
+    </div>
+</div>

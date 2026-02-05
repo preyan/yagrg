@@ -1,0 +1,34 @@
+<div class="card border-0 shadow-sm glass-card">
+    <div class="card-body p-4">
+        <h5 class="card-title fw-bold mb-4 d-flex align-items-center">
+            <i class="bi bi-person-fill text-primary me-2"></i>
+            Personal Information
+        </h5>
+
+        <form [formGroup]="personalInfoForm" class="row g-3">
+            <div class="col-md-6">
+                <label for="name" class="form-label small text-muted text-uppercase fw-semibold">Full Name</label>
+                <input type="text" id="name" class="form-control form-control-lg custom-input" formControlName="name"
+                    placeholder="e.g. John Doe">
+            </div>
+
+            <div class="col-md-6">
+                <label for="role" class="form-label small text-muted text-uppercase fw-semibold">Current Role</label>
+                <input type="text" id="role" class="form-control form-control-lg custom-input" formControlName="role"
+                    placeholder="e.g. Senior Frontend Engineer">
+            </div>
+
+            <div class="col-12">
+                <label for="location" class="form-label small text-muted text-uppercase fw-semibold">Location</label>
+                <input type="text" id="location" class="form-control form-control-lg custom-input"
+                    formControlName="location" placeholder="e.g. San Francisco, CA">
+            </div>
+
+            <div class="col-12">
+                <label for="bio" class="form-label small text-muted text-uppercase fw-semibold">Bio</label>
+                <textarea id="bio" class="form-control custom-input" formControlName="bio" rows="3"
+                    placeholder="Briefly describe yourself..."></textarea>
+            </div>
+        </form>
+    </div>
+</div>

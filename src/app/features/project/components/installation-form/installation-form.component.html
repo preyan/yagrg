@@ -1,0 +1,82 @@
+<div class="card border-0 shadow-sm glass-card mt-4">
+    <div class="card-body p-4">
+        <h5 class="card-title fw-bold mb-4 d-flex align-items-center">
+            <i class="bi bi-gear-fill text-primary me-2"></i>
+            Installation & Setup
+        </h5>
+
+        <form [formGroup]="installationForm" class="row g-4">
+            <!-- Prerequisites -->
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <p class="small text-muted text-uppercase fw-semibold mb-0">Prerequisites</p>
+                    <button type="button" class="btn btn-outline-primary btn-sm rounded-pill"
+                        (click)="addPrerequisite()">
+                        <i class="bi bi-plus-lg"></i> Add Requirement
+                    </button>
+                </div>
+
+                <div formArrayName="prerequisites" class="d-flex flex-wrap gap-2">
+                    @for (prereq of prerequisites.controls; track $index) {
+                    <div class="input-group input-group-sm animate-in" style="width: auto; min-width: 150px;">
+                        <input type="text" [formControlName]="$index" class="form-control custom-input"
+                            placeholder="e.g. Node.js v18" [attr.aria-label]="'Prerequisite ' + ($index + 1)">
+                        <button class="btn btn-outline-danger" type="button" (click)="removePrerequisite($index)"
+                            aria-label="Remove prerequisite">
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+                    </div>
+                    } @empty {
+                    <div class="text-muted small italic w-100">No prerequisites added yet.</div>
+                    }
+                </div>
+            </div>
+
+            <hr class="my-2 opacity-10">
+
+            <!-- Steps -->
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <p class="small text-muted text-uppercase fw-semibold mb-0">Installation Steps</p>
+                    <button type="button" class="btn btn-outline-primary btn-sm rounded-pill" (click)="addStep()">
+                        <i class="bi bi-plus-lg"></i> Add Step
+                    </button>
+                </div>
+
+                <div formArrayName="steps" class="steps-list">
+                    @for (stepGroup of steps.controls; track $index) {
+                    <div [formGroupName]="$index"
+                        class="row g-2 mb-3 align-items-end animate-in p-3 rounded-3 bg-light border">
+                        <div class="col-md-5">
+                            <p class="x-small text-muted mb-1 fw-semibold text-uppercase">Step Description</p>
+                            <input type="text" formControlName="step" class="form-control form-control-sm custom-input"
+                                placeholder="e.g. Install dependencies"
+                                [attr.aria-label]="'Step description ' + ($index + 1)">
+                        </div>
+                        <div class="col-md-5">
+                            <p class="x-small text-muted mb-1 fw-semibold text-uppercase">Command</p>
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-text bg-dark text-light border-0"><i
+                                        class="bi bi-terminal"></i></span>
+                                <input type="text" formControlName="command"
+                                    class="form-control form-control-sm custom-input bg-dark text-light border-0"
+                                    placeholder="pnpm install" [attr.aria-label]="'Command ' + ($index + 1)">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-danger btn-sm w-100 py-1" (click)="removeStep($index)"
+                                aria-label="Remove step">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    } @empty {
+                    <div class="text-center py-4 text-muted border border-dashed rounded-3">
+                        Click "Add Step" to document the installation process.
+                    </div>
+                    }
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

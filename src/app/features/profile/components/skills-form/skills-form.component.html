@@ -1,0 +1,43 @@
+<div class="card border-0 shadow-sm glass-card mt-4">
+    <div class="card-body p-4">
+        <h5 class="card-title fw-bold mb-4 d-flex align-items-center">
+            <i class="bi bi-code-slash text-primary me-2"></i>
+            Tech Stack & Skills
+        </h5>
+
+        @if (techStack$ | async; as selectedSkills) {
+        <div class="mb-4">
+            <p class="small text-muted text-uppercase fw-semibold mb-3">Selected Skills</p>
+            <div class="d-flex flex-wrap gap-2 min-vh-10">
+                @if (selectedSkills.length === 0) {
+                <div class="text-muted small italic">
+                    No skills selected yet. Choose from the list below.
+                </div>
+                }
+                @for (skill of selectedSkills; track skill.name) {
+                <div class="badge-wrapper animate-in">
+                    <img [src]="badgeService.getBadgeUrl(skill)" [alt]="skill.name" class="skill-badge">
+                    <button type="button" class="btn-close btn-close-white remove-skill"
+                        (click)="removeSkill(skill.name)" aria-label="Remove"></button>
+                </div>
+                }
+            </div>
+        </div>
+
+        <hr class="my-4 opacity-10">
+
+        <div>
+            <p class="small text-muted text-uppercase fw-semibold mb-3">Available Skills</p>
+            <div class="d-flex flex-wrap gap-2">
+                @for (skill of availableSkills; track skill.name) {
+                <button type="button" class="btn btn-outline-secondary btn-sm rounded-pill px-3 transition-all"
+                    [class.active]="isSkillSelected(skill.name, selectedSkills)"
+                    [disabled]="isSkillSelected(skill.name, selectedSkills)" (click)="addSkill(skill)">
+                    {{ skill.name }}
+                </button>
+                }
+            </div>
+        </div>
+        }
+    </div>
+</div>
