@@ -1,0 +1,38 @@
+# Task List: YAGRG (Yet Another GitHub README Generator)
+
+- [ ] Project Setup <!-- id: 0 -->
+    - [ ] Initialize Angular workspace (YAGRG) with `pnpm` and `NgModules` <!-- id: 1 -->
+    - [/] Configure `pnpm` (Selected for stability over Bun) <!-- id: 2 -->
+    - [ ] Install dependencies (NgRx, ng-bootstrap, bootstrap) <!-- id: 3 -->
+    - [ ] Set up ESLint and Prettier <!-- id: 4 -->
+    - [ ] Create folder structure (core, shared, features) <!-- id: 5 -->
+- [ ] Core Architecture & State Management <!-- id: 6 -->
+    - [ ] Setup NgRx Store (Root state, meta-reducers) <!-- id: 7 -->
+    - [ ] Implement Theme Service (Light/Dark mode) <!-- id: 8 -->
+    - [ ] create Shared UI Library (components, pipes, directives) <!-- id: 9 -->
+- [ ] Feature: Profile README Generator <!-- id: 10 -->
+    - [ ] Create lazy-loaded module `ProfileGeneratorModule` <!-- id: 11 -->
+    - [ ] Implement State (Actions, Reducers, Selectors) for Profile <!-- id: 12 -->
+    - [ ] Build Form Components (Personal Info, Skills, Socials) <!-- id: 13 -->
+    - [ ] Implement Badge Generator Service <!-- id: 14 -->
+- [ ] Feature: Project README Generator <!-- id: 15 -->
+    - [ ] Create lazy-loaded module `ProjectGeneratorModule` <!-- id: 16 -->
+    - [ ] Implement State for Project <!-- id: 17 -->
+    - [ ] Build Form Components (Metadata, Features, Installation) <!-- id: 18 -->
+- [ ] Feature: Live Preview <!-- id: 19 -->
+    - [ ] Create lazy-loaded module `PreviewModule` <!-- id: 20 -->
+    - [ ] Implement Markdown Composition Service <!-- id: 21 -->
+    - [ ] Build Preview Component <!-- id: 22 -->
+    - [ ] Implement Copy/Download functionality <!-- id: 23 -->
+- [ ] Global UI & Theming <!-- id: 24 -->
+    - [ ] Setup SCSS variables and mixins <!-- id: 25 -->
+    - [ ] Implement global layout (Header, Nav, Footer) <!-- id: 26 -->
+    - [ ] Apply ng-bootstrap components (Tooltip, Modal, Accordion) <!-- id: 27 -->
+- [ ] Testing & Quality <!-- id: 28 -->
+    - [ ] Write Unit Tests for Services (100% coverage target) <!-- id: 29 -->
+    - [ ] Write Unit Tests for State (Reducers, Effects) <!-- id: 30 -->
+    - [ ] Write Unit Tests for Components <!-- id: 31 -->
+- [ ] Deployment & CI/CD <!-- id: 32 -->
+    - [ ] Configure GitHub Actions for Lint & Test <!-- id: 33 -->
+    - [ ] Configure GitHub Actions for Deploy to GitHub Pages <!-- id: 34 -->
+    - [ ] Verify production build <!-- id: 35 -->
