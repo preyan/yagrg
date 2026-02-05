@@ -9,6 +9,7 @@ This document tracks the CLI commands used during the development of YAGRG, alon
 | `npm install -g pnpm`                                                                                                                           | Installs pnpm globally for faster package management.                                               |
 | `npx -p @angular/cli@latest ng new yagrg --style=scss --routing=true --ssr=false --standalone=false --package-manager=pnpm --strict --skip-git` | Generates the Angular workspace with strict settings, SCSS, Routing, and NgModules (No Standalone). |
 | `git init`                                                                                                                                      | Initializes the git repository.                                                                     |
+| `git add . && git commit -m "chore: configure tooling" --no-verify`                                                                             | Commits tooling config (skipping hooks to avoid chicken-and-egg issues).                            |
 | `git add . && git commit -m "chore: initial project setup"`                                                                                     | Creates the initial commit.                                                                         |
 
 ## Dependency Installation
