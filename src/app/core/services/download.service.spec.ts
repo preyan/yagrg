@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { DownloadService } from './download';
+import { DownloadService } from './download.service';
 
 describe('DownloadService', () => {
   let service: DownloadService;

@@ -13,11 +13,20 @@
         <div class="col-lg-6 h-100 ps-lg-4 border-start d-none d-lg-block">
             <div class="sticky-top pt-2">
                 <div class="card shadow-sm border-0 h-100 glass-card">
-                    <div class="card-header bg-transparent border-0 pt-4 px-4">
+                    <div
+                        class="card-header bg-transparent border-0 pt-4 px-4 d-flex justify-content-between align-items-center">
                         <h5 class="fw-bold m-0 d-flex align-items-center">
                             <i class="bi bi-eye-fill text-primary me-2"></i>
                             Live Preview
                         </h5>
+                        <div class="btn-group shadow-sm rounded-pill overflow-hidden">
+                            <button class="btn btn-outline-primary btn-sm px-3" (click)="copyToClipboard()">
+                                <i class="bi bi-copy me-1"></i> Copy
+                            </button>
+                            <button class="btn btn-primary btn-sm px-3" (click)="downloadReadme()">
+                                <i class="bi bi-download me-1"></i> Download
+                            </button>
+                        </div>
                     </div>
                     <div class="card-body p-4 preview-container custom-scrollbar overflow-auto">
                         <app-markdown-renderer [markdown]="(markdown$ | async) || ''"></app-markdown-renderer>
