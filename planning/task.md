@@ -8,9 +8,9 @@
     - [x] Configure Tooling (Husky, Commitlint, Stylelint, Compodoc, TSDoc, SemVer) <!-- id: 4a -->
     - [x] Create folder structure (core, shared, features) <!-- id: 5 -->
 - [/] Core Architecture & State Management <!-- id: 6 -->
-    - [/] Setup NgRx Store (Root state, meta-reducers) <!-- id: 7 -->
+    - [x] Setup NgRx Store (Root state, meta-reducers) <!-- id: 7 -->
     - [x] Implement Theme Service (Light/Dark mode) <!-- id: 8 -->
-    - [ ] create Shared UI Library (components, pipes, directives) <!-- id: 9 -->
+    - [/] create Shared UI Library (components, pipes, directives) <!-- id: 9 -->
 - [ ] Feature: Profile README Generator <!-- id: 10 -->
     - [ ] Create lazy-loaded module `ProfileGeneratorModule` <!-- id: 11 -->
     - [ ] Implement State (Actions, Reducers, Selectors) for Profile <!-- id: 12 -->
